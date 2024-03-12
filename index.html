@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Time Daily Planner</title>
+    <!-- bootstrap and my css links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="Stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <!-- header with bootstrap styling -->
+    <header class= 'jumbotron text-center'id="headerText">
+        <h1 class="display-1"> My Time</h1>
+        <p>Maximize your Time with this easy to use Daily Planner made with JavaScript</p>
+        <div id='dailyMessage'></div>
+        <div id="currentDay"> </div>
+    </header>
+<!-- container for my time blocks and buttons -->
+    <div class ='plannerContainer'>
+        <div id="planner"></div>
+    </div>
+<!-- day js and script link -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
+</html>
