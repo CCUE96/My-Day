@@ -27,57 +27,69 @@ setInterval(updateTime, 1000);
 
 // array for different times meridian and a blank string for the reminders text box
 let timeList = [
-    { 
+    { numberTime:7,
     time: '7:00', 
     meridian: 'am', 
     reminders: '' },
     {
+    numberTime:8,
     time: '8:00', 
     meridian: 'am', 
     reminders: '' 
     },
 
-    { time: '9:00', 
+    { numberTime:9,
+        time: '9:00', 
     meridian: 'am', 
     reminders: '' },
 
-    { time: '10:00',
+    { numberTime:10,
+        time: '10:00',
      meridian: 'am',
       reminders: '' },
 
-    { time: '11:00',
+    { numberTime:11,
+        time: '11:00',
      meridian: 'am',
       reminders: '' },
 
-    { time: '12:00',
+    { numberTime:12,
+        time: '12:00',
      meridian: 'pm',
       reminders: '' },
 
-    { time: '1:00', 
+    { numberTime:13,
+        time: '1:00', 
     meridian: 'pm', 
     reminders: '' },
     
-    {time: '2:00',
+    {numberTime:14,
+        time: '2:00',
      meridian: 'pm',
      reminders: '' },
     
-    {time: '3:00', 
+    { numberTime:15,
+        time: '3:00', 
     meridian: 'pm', 
     reminders: '' },
     
-   {time: '4:00', 
+   {numberTime:16,
+    time: '4:00', 
     meridian: 'pm',
     reminders: '' },
     
-     { time: '5:00',
+     { numberTime:17,
+        time: '5:00',
+      meridian: 'pm',
+      reminders: '' },
+     
+    {numberTime:18,
+         time: '6:00',
       meridian: 'pm',
       reminders: '' },
 
-    { time: '6:00',
-      meridian: 'pm',
-      reminders: '' },
-
-    { time: '7:00',
+    { numberTime: 19,
+        time: '7:00',
       meridian: 'pm',
       reminders: '' }
 
@@ -109,16 +121,20 @@ function createTimeRows() {
         textAreaColumn.appendChild(plannerInput);
 
  // Color coding based on time
-const currentTime = dayjs();
+const currentTime = dayjs().hour();
+console.log(currentTime)
 // event time =  dayjs(current time)timeindex time and merdian
-const eventTime = dayjs(`${timeIndex.time} ${timeIndex.meridian}`, 'h:mm A');
-const hourDifference =eventTime.diff(currentTime,'hour')
+const eventTime = dayjs(`${timeIndex.numberTime} ${timeIndex.meridian}`, 'h:mm A');
+console.log(eventTime)
+const hourDifference =currentTime - timeIndex.numberTime
+console.log(hourDifference)
 // if statement for coloring time boxes according to time
-if (hourDifference > 0) {
+if (currentTime < timeIndex.numberTime) {
+    console.log('hourDifference')
     plannerInput.style.backgroundColor = 'lightgreen';
     // console log the current time to test only present is working i will resubmit once working
     console.log("Future");
-} else if (hourDifference < 0 ) {
+} else if (currentTime > timeIndex.numberTime ) {
     plannerInput.style.backgroundColor = 'violet'; 
     console.log("Past");
 } else {
