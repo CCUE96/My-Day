@@ -2,6 +2,7 @@ const currentDayEl = document.querySelector('#currentDay');
 const plannerEl = document.querySelector('#planner');
 const dailyMessageEl = document.querySelector('#dailyMessage');
 
+
 // sources the current date and time
 function updateTime() {
     let currentDate = dayjs();
@@ -27,16 +28,7 @@ setInterval(updateTime, 1000);
 
 // array for different times meridian and a blank string for the reminders text box
 let timeList = [
-    { numberTime:7,
-    time: '7:00', 
-    meridian: 'am', 
-    reminders: '' },
-    {
-    numberTime:8,
-    time: '8:00', 
-    meridian: 'am', 
-    reminders: '' 
-    },
+
 
     { numberTime:9,
         time: '9:00', 
@@ -69,9 +61,9 @@ let timeList = [
      reminders: '' },
     
     { numberTime:15,
-        time: '3:00', 
-    meridian: 'pm', 
-    reminders: '' },
+      time: '3:00', 
+      meridian: 'pm', 
+      reminders: '' },
     
    {numberTime:16,
     time: '4:00', 
@@ -83,16 +75,6 @@ let timeList = [
       meridian: 'pm',
       reminders: '' },
      
-    {numberTime:18,
-         time: '6:00',
-      meridian: 'pm',
-      reminders: '' },
-
-    { numberTime: 19,
-        time: '7:00',
-      meridian: 'pm',
-      reminders: '' }
-
 ];
 
 function createTimeRows() {
@@ -173,3 +155,19 @@ if (currentTime < timeIndex.numberTime) {
 }
 // invoke function
 createTimeRows();
+// function to get Item from Local Storage
+function getReminders() {
+    for (let i = 0; i < timeList.length; i++) {
+        const timeIndex = timeList[i];
+        const plannerInput = document.querySelector(`textarea[data-time="${timeIndex.time}"]`);
+        // local storage get item
+        const savedReminder = localStorage.getItem(timeIndex.time);
+        // if savedreminder value doesnt = nothing the planner input value = the saved reminder
+        if (savedReminder !== null) {
+            plannerInput.value = savedReminder;
+        }
+    }
+}
+
+// Call the function to populate saved reminders when the page loads
+getReminders()
