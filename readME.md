@@ -16,6 +16,7 @@ As a professional i want to meticulously plan out my day so I can maximise my Ti
 - Calender for all uses
 
 ## <ins>Mockup<ins>
+![Screenshot 2024-04-30 181106](https://github.com/CCUE96/My-Day/assets/159393541/808c43b9-0187-48ba-9ff1-a7fa3fc3fed1)
 
 ## <ins>Repository<ins>
 https://github.com/CCUE96/My-Day
