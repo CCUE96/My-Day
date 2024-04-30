@@ -18,5 +18,5 @@ As a professional i want to meticulously plan out my day so I can maximise my Ti
 ## <ins>Mockup<ins>
 
 ## <ins>Repository<ins>
-
+https://github.com/CCUE96/My-Day
 ## <ins>Deployed Site<ins>
